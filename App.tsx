@@ -321,8 +321,7 @@ const DashboardView: React.FC<{ user: User; onLogout: () => void }> = ({ user, o
                         <div 
                           className={`h-full transition-all duration-1000 ${
                             emp.load > 2 ? 'bg-red-500' : emp.load > 1 ? 'bg-amber-500' : 'bg-blue-500'
-                          }`}
-                          style={{ width: `${(emp.load / 5) * 100}%` }}
+                          } ${emp.load === 0 ? 'w-0' : emp.load === 1 ? 'w-1/5' : emp.load === 2 ? 'w-2/5' : emp.load === 3 ? 'w-3/5' : emp.load === 4 ? 'w-4/5' : 'w-full'}`}
                         ></div>
                       </div>
                     </div>
